@@ -8,8 +8,8 @@ using Moq;
 
 using PaymentGateway.Api.Controllers;
 using PaymentGateway.Api.Domain;
+using PaymentGateway.Api.Enums;
 using PaymentGateway.Api.Infrastructures;
-using PaymentGateway.Api.Models;
 using PaymentGateway.Api.Models.Requests;
 using PaymentGateway.Api.Models.Responses;
 using PaymentGateway.Api.Repositories;

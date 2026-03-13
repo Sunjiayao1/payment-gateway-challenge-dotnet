@@ -1,3 +1,4 @@
+using PaymentGateway.Api.Enums;
 using PaymentGateway.Api.Models;
 
 namespace PaymentGateway.Api.Domain;

@@ -1,4 +1,5 @@
 using PaymentGateway.Api.Domain;
+using PaymentGateway.Api.Enums;
 using PaymentGateway.Api.Infrastructures;
 using PaymentGateway.Api.Models;
 using PaymentGateway.Api.Models.Requests;
