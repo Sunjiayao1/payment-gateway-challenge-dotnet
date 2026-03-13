@@ -1,15 +1,22 @@
+using PaymentGateway.Api.Infrastructures;
+using PaymentGateway.Api.Repositories;
 using PaymentGateway.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient<IBankSimulatorClient, BankSimulatorClient>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:8080");
+});
 
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddSingleton<IPaymentsRepository, PaymentsRepository>();
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddSingleton<PaymentsRepository>();
 
 var app = builder.Build();
 
